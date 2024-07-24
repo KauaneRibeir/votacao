@@ -5,15 +5,15 @@ const votos = [];
 
 const criar = () => {
 
-  let voto = +prompt("Seu voto? ");
   console.log(`Escolha um cadidato:
   cadidato 1 = 1
   cadidato 2 = 2
   cadidato 3 = 3
   cadidato 4 = 4`);
 
+  let voto = +prompt("Seu voto? ");
   votos.push(voto);
-  console.log("Voto compultado");
+  console.log("Voto compultado.");
 }
 
 const listar = () => {
@@ -27,13 +27,11 @@ const atualizar = () => {
   listar();
 
   let indice = prompt("Qual indice deseja atualizar? ");
-  let atual = prompt(" Voto atualizado ");
+  let atual = prompt(" Voto atualizado: ");
 
-  let voto = modelo();
+  votos[--indice] = atual;
 
-  votos[--indice] = voto;
-
-  console.log("Atualizado");
+  console.log("Atualizado!");
 };
 
 const remover = () => {
@@ -43,7 +41,7 @@ const remover = () => {
 
   votos.splice(--indice, 1);
 
-  console.log("Removido");
+  console.log("Removido!");
 };
 
 module.exports = {
